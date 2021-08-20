@@ -21,3 +21,7 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS final
 WORKDIR /app
 COPY --from=build /app/out .
 
+HEALTHCHECK --interval=5m --timeout=3s --start-period=10s --retries=1 \
+  CMD curl --fail http://localhost:80/health || exit 1
+
+ENTRYPOINT ["dotnet", "ApiGen.dll"]
