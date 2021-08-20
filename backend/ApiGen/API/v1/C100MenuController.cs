@@ -114,10 +114,15 @@ namespace ApiGen.API.v1
             }
 
             // Get all data Menu
-
+            if (what == 107)
+            {
+                // Call get all data Menu
+                IEnumerable<E100Menu> sinhVien = await _d100MenuDataAccess.GetDataByGroup();
+                return JsonConvert.SerializeObject(sinhVien, Formatting.Indented);
+            }
 
             // Get all data Menu
-            if (what == 107)
+            if (what == 10/)
             {
                 // Call get all data Menu
                 IEnumerable<object> result = await _d100MenuDataAccess.GetDataMenuRecusive108();
