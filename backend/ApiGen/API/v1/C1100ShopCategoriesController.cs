@@ -82,7 +82,7 @@ namespace ApiGen.API.v1
                 return JsonConvert.SerializeObject(result, Formatting.Indented);
             }
 
-            // Get data ShopCategories Pagination 
+            // Get data ShopCategories Pagination and with 1104
             if (what == 1105)
             {
                 // Auto map request param data to Entity
@@ -100,7 +100,7 @@ namespace ApiGen.API.v1
             if (what == 1106)
             {
                 // Get id ShopCategories need check
-                var Condition = "";
+                var Condition = "null";
                 if (param.Condition != null)
                 {
                     Condition = param.Condition;
