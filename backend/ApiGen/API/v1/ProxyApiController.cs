@@ -49,9 +49,7 @@ namespace ApiGen.API.v1
         private C2800OrderShopController _c2800OrderShopController; 
         private C2900OrderDetailController _c2900OrderDetailController; 
         private C3000CommentStatusController _c3000CommentStatusController; 
-        private C3100MyPromotionController _c3100MyPromotionController; 
-        private C3200InputProductController _c3200InputProductController; 
-        private C3300WarehouseController _c3300WarehouseController; 
+
 
 
         public ProxyApiController(IApiConnect apiConnect,
