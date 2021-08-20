@@ -1,51 +1,12 @@
-using ApiGen.Infrastructure.Configs;
-using ApiGen.Infrastructure.Extensions;
-using AspNetCoreRateLimit;
-using AutoMapper;
-using AutoWrapper;
-using FluentValidation.AspNetCore;
-using HealthChecks.UI.Client;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.DataProtection;
-using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption;
-using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Features;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.Hosting;
-using System.IO; 
-namespace ApiGen
-{
-    public class Startup
-    {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-        public IConfiguration Configuration { get; }
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
-            //Register services in Installers folder
-            services.AddServicesInAssembly(Configuration);
-            //Register MVC/Web API, NewtonsoftJson and add FluentValidation Support
-            services.AddControllers()
-                    .AddNewtonsoftJson(ops => { ops.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore; })
-                    .AddFluentValidation(fv => { fv.RunDefaultMvcValidationAfterFluentValidationExecutes = false; });
-            services.Configure<FormOptions>(o => {
-                o.ValueLengthLimit = int.MaxValue;
-                o.MultipartBodyLengthLimit = int.MaxValue;
-                o.MemoryBufferThreshold = int.MaxValue;
-            }); 
-            //Register Automapper
-            services.AddAutoMapper(typeof(MappingProfileConfiguration));
+version: '3'
+services:
+  
+  web:
+    build: ./backend
+    ports:
+        - "8000:80" 
+    volumes:
+      - container-volume:/home/izicloud4/web-ban-hang
 
-            services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(@"/home/izicloud4/web-ban-hang"))
-                .UseCryptographicAlgorithms(new AuthenticatedEncryptorConfiguration()
-                {
-                    EncryptionAlgorithm = EncryptionAlgorithm.AES_256_CBC,
+volumes:
+  container-volume:
