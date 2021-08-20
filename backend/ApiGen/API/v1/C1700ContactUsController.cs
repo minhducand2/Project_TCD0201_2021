@@ -95,6 +95,20 @@ namespace ApiGen.API.v1
 
                 return JsonConvert.SerializeObject(result, Formatting.Indented);
             }
+            // Check ContactUs exists by Id
+            if (what == 1706)
+            {
+                // Get id ContactUs need check
+                var Condition = "";
+                if (param.Condition != null)
+                {
+                    Condition = param.Condition;
+                }
+                // Call check ContactUs in table
+                var result = await _d1700ContactUsDataAccess.CountNumberItem(Condition);
+
+                return JsonConvert.SerializeObject(result, Formatting.Indented);
+            }           
 
             return null;
         }
