@@ -122,7 +122,7 @@ namespace ApiGen.API.v1
             }
 
             // Get all data Menu
-            if (what == 10/)
+            if (what == 108)
             {
                 // Call get all data Menu
                 IEnumerable<object> result = await _d100MenuDataAccess.GetDataMenuRecusive108();
