@@ -74,10 +74,10 @@ namespace ApiGen.API.v1
             if (what == 504)
             {
                 // Get id Footer need delete
-                var id = param.id.Value;
+               // var id = param.id.Value;
 
                 // Call find Footer from table by id
-                var result = await _d500FooterDataAccess.GetByIdAsync(id);
+                //var result = await _d500FooterDataAccess.GetByIdAsync(id);
 
                 return JsonConvert.SerializeObject(result, Formatting.Indented);
             }
@@ -103,7 +103,7 @@ namespace ApiGen.API.v1
                 var Condition = "";
                 if (param.Condition != null)
                 {
-                    Condition = param;
+                    Condition = param.Condition;
                 }
                 // Call check Footer in table
                 var result = await _d500FooterDataAccess.CountNumberItem(Condition);
