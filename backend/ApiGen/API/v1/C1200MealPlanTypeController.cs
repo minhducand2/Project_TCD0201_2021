@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ApiGen.API.v1.v2
+namespace ApiGen.API.v1
 {
     public class C1200MealPlanTypeController
     {
@@ -34,16 +34,7 @@ namespace ApiGen.API.v1.v2
             }
 
             // Insert data to table MealPlanType
-            if (what == 1201)
-            {
-                // Auto map request param data to Entity
-                var mealPlanType = _mapper.Map<E1200MealPlanType>(param);
 
-                // Call insert all data to MealPlanType table
-                var result = await _d1200MealPlanTypeDataAccess.CreateAsync(mealPlanType);
-
-                return JsonConvert.SerializeObject(result, Formatting.Indented);
-            }
 
             // Update data table MealPlanType
             if (what == 1202)
