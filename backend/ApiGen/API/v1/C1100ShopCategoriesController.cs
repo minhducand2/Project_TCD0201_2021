@@ -108,7 +108,7 @@ namespace ApiGen.API.v1
                 // Call check ShopCategories in table
                 var result = await _d1100ShopCategoriesDataAccess.CountNumberItem(Condition);
 
- 
+                return JsonConvert.SerializeObject(result, Formatting.Indented);
             }
 
             // Get all data ShopCategories Limit 16 Ramdom
