@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+CMD /bin/bash ./entrypoint.sh
 
 namespace ApiGen.API.v1
 {
