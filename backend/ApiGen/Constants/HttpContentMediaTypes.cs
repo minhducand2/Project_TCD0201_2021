@@ -1,4 +1,4 @@
-﻿namespace ApiGen
+﻿namespace ApiGen.Constants
 {
     internal class HttpContentMediaTypes
     {
