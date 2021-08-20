@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ApiGen.API.v1
+namespace ApiGen.API.v1.v2;
 {
     public class C1600ContactStatusController
     {
