@@ -89,7 +89,7 @@ namespace ApiGen.API.v1
             }
 
             // Get data InputProduct Pagination 
-          /**  if (what == 3205)
+            if (what == 3205)
             {
                 // Auto map request param data to Entity
                 UrlQueryParameters queryParam = _mapper.Map<UrlQueryParameters>(param);
@@ -100,7 +100,7 @@ namespace ApiGen.API.v1
                 var result = await _d3200InputProductDataAccess.GetPaginationAsync(queryParam);
 
                 return JsonConvert.SerializeObject(result, Formatting.Indented);
-            }**/
+            }
 
             // Check InputProduct exists by Id
             if (what == 3206)
