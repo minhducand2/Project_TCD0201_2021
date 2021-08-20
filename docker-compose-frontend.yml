@@ -10,7 +10,7 @@ services:
     container_name: angular-ui-admin
     volumes:
        - ./frontend-admin:/usr/src/app/frontend-admin
-       - /usr/src/app/frontend-admin/node_modules
+
 
   angular-ui-user:
     build:
