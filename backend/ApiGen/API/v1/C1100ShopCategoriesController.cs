@@ -115,7 +115,7 @@ namespace ApiGen.API.v1
             if (what == 1107)
             {
                 // Call get all data ShopCategories
-
+                IEnumerable<E1100ShopCategories> shopCategories = await _d1100ShopCategoriesDataAccess.GetAllRamdomLimit16Async();
 
                 return JsonConvert.SerializeObject(shopCategories, Formatting.Indented);
             }
