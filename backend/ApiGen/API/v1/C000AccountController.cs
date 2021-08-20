@@ -90,7 +90,7 @@ namespace ApiGen.API.v1
             }
 
             // Find data Account by Id
-            if (what == 5)
+            if (what == 6)
             {
                 // Get id Account need delete
                 string id = param.id;
