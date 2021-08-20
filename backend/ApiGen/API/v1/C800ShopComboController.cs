@@ -21,7 +21,7 @@ namespace ApiGen.API.v1
             _mapper = mapper;
             _logger = logger;
         }
-/**
+
         public async Task<string> execute(int what, dynamic param)
         {
             // Get all data ShopCombo
@@ -32,7 +32,7 @@ namespace ApiGen.API.v1
                
                 return JsonConvert.SerializeObject(shopCombo, Formatting.Indented);
             }
-**/
+
             // Insert data to table ShopCombo
             if (what == 801)
             {
