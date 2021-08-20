@@ -82,20 +82,6 @@ namespace ApiGen.API.v1
                 return JsonConvert.SerializeObject(result, Formatting.Indented);
             }
 
-            // Get data ContactInfo Pagination 
-            if (what == 1505)
-            {
-                // Auto map request param data to Entity
-                UrlQueryParameters queryParam = _mapper.Map<UrlQueryParameters>(param);
-                queryParam.limit = unchecked((int)param.limit.Value);
-                queryParam.offset = unchecked((int)param.offset.Value);
-
-                // Call get all data from ContactInfo table have pagination
-                var result = await _d1500ContactInfoDataAccess.GetPaginationAsync(queryParam);
-
-                return JsonConvert.SerializeObject(result, Formatting.Indented);
-            }
-
             // Check ContactInfo exists by Id
             if (what == 1506)
             {
@@ -105,7 +91,10 @@ namespace ApiGen.API.v1
                 {
                     Condition = param.Condition;
                 }
+                // Call check ContactInfo in table
+                var result = await _d1500ContactInfoDataAccess.CountNumberItem(Condition);
 
+                return JsonConvert.SerializeObject(result, Formatting.Indented);
             } 
             return null;
 
