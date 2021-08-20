@@ -3,7 +3,7 @@ GO
 
 USE [web_ban_hang]
 GO
-/****** Object:  Table [dbo].[p000account]    Script Date: 24/06/2021 3:32:52 PM ******/
+/****** Object:  Table [dbo].[p000account]    Script Date: 24/07/2021 4:00:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
