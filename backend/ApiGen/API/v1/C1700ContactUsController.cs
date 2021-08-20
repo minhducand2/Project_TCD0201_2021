@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ApiGen.API.v1
 {
-    public class C16000ContactUsController
+    public class C1700ContactUsController
     {
         private readonly ILogger<dynamic> _logger;
         private readonly IMapper _mapper;
