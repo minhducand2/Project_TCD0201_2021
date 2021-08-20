@@ -97,7 +97,7 @@ namespace ApiGen.API.v1
             }
 
             // Check ContactStatus exists by Id
-            if (what == 1607)
+            if (what == 1606)
             {
                 // Get id ContactStatus need check
                 var Condition = "";
