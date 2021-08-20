@@ -103,7 +103,7 @@ namespace ApiGen.API.v1
                 var Condition = "";
                 if (param.Condition != null)
                 {
-                    Condition = param.Condition;
+                    Condition = param;
                 }
                 // Call check Footer in table
                 var result = await _d500FooterDataAccess.CountNumberItem(Condition);
