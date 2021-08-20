@@ -41,7 +41,8 @@ namespace ApiGen.API.v1
 
                 // Call insert all data to UserStatus table
                 var result = await _d1800UserStatusDataAccess.CreateAsync(userStatus);
-
+                return JsonConvert.SerializeObject(result, Formatting.Indented);
+                
             }
 
             // Update data table UserStatus
