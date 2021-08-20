@@ -2,10 +2,10 @@ import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
 describe('workspace-project App', () => {
-  let page: New;
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new New();
+    page = new AppPage();
   });
 
   it('should display welcome message', () => {
