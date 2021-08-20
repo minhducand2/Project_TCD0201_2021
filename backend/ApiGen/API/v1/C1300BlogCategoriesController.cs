@@ -33,7 +33,7 @@ namespace ApiGen.API.v1
             }
 
             // Insert data to table BlogCategories
-            
+            if (what == 1301)
             {
                 // Auto map request param data to Entity
                 var blogCategories = _mapper.Map<E1300BlogCategories>(param);
@@ -110,7 +110,7 @@ namespace ApiGen.API.v1
                 return JsonConvert.SerializeObject(result, Formatting.Indented);
             } 
 
-
+            return null;
         }
     }
 }
