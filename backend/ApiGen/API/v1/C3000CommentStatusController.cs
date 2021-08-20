@@ -101,7 +101,7 @@ namespace ApiGen.API.v1
             {
                 // Get id CommentStatus need check
                 var Condition = "";
-                if (param.Condition = null)
+                if (param.Condition != null)
                 {
                     Condition = param.Condition;
                 }
