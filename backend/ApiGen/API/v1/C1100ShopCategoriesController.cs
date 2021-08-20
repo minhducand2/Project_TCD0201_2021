@@ -82,7 +82,7 @@ namespace ApiGen.API.v1
                 return JsonConvert.SerializeObject(result, Formatting.Indented);
             }
 
-            // Get data ShopCategories Pagination and with 1104
+            // Get data ShopCategories Pagination
             if (what == 1105)
             {
                 // Auto map request param data to Entity
@@ -100,7 +100,7 @@ namespace ApiGen.API.v1
             if (what == 1106)
             {
                 // Get id ShopCategories need check
-                var Condition = "null";
+                var Condition = "";
                 if (param.Condition != null)
                 {
                     Condition = param.Condition;
@@ -108,7 +108,7 @@ namespace ApiGen.API.v1
                 // Call check ShopCategories in table
                 var result = await _d1100ShopCategoriesDataAccess.CountNumberItem(Condition);
 
-                return JsonConvert.SerializeObject(result, Formatting.Indented);
+ 
             }
 
             // Get all data ShopCategories Limit 16 Ramdom
