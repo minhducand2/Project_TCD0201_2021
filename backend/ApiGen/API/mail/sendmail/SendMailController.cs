@@ -32,7 +32,16 @@ namespace Sample.Controllers
             {
                 mailMessage.CC.Add(email.Cc);
             }
+            mailMessage.Body = email.Text;
 
+            mailMessage.Subject = email.Subject;
+
+            mailMessage.BodyEncoding = System.Text.Encoding.UTF8;
+            mailMessage.SubjectEncoding = System.Text.Encoding.UTF8;
+
+            await client.SendMailAsync(mailMessage);
+
+            return Ok();
         }
     }
 }
