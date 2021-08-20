@@ -3,7 +3,9 @@ using ApiGen.Data.DataAccess;
 using ApiGen.Data.Entity; 
 using AutoMapper; 
 using Microsoft.Extensions.Logging;
-
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ApiGen.API.v1
 {
@@ -95,7 +97,7 @@ namespace ApiGen.API.v1
             }
 
             // Check ContactStatus exists by Id
-            if (what == 1606)
+            if (what == 1607)
             {
                 // Get id ContactStatus need check
                 var Condition = "";
