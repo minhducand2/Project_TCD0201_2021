@@ -1,12 +1,16 @@
-#!/bin/bash
+# https://hub.docker.com/_/microsoft-dotnet
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+WORKDIR /ApiGen
 
-set -e
-run_cmd="dotnet run --server.urls http://*:80"
+# copy csproj and restore as distinct layers
+	@@ -10,10 +10,9 @@ RUN dotnet restore
+# copy everything else and build app
+COPY ApiGen/. ./ApiGen/
+WORKDIR /backend/ApiGen
+RUN dotnet publish -c release -o /app --no-restore
 
-until dotnet ef database update; do
->&2 echo "SQL Server is starting up"
-sleep 1
-done
-
->&2 echo "SQL Server is up - executing command"
-exec $run_cmd
+# final stage/image
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
+WORKDIR /app
+COPY --from=build /app ./
+ENTRYPOINT ["dotnet", "ApiGen.dll"]
