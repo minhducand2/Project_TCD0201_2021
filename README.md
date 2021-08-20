@@ -51,7 +51,7 @@ docker-compose build
 
 
 
-docker-compose download
+docker-compose down
 
 
 
