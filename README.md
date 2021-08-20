@@ -25,3 +25,42 @@ _Database using SQL server.
 
 
 _All projects will be saved on a cloud computing platform with docker.
+
+
+
+
+step by step instructions
+
+[if damaged]
+
+
+
+
+docker system prune -a
+
+
+
+docker-compose build
+
+
+
+---------------------
+
+
+[often used]
+
+
+
+docker-compose download
+
+
+
+docker-compose up // in case it doesn't fix
+
+
+
+---------------------
+
+
+
+docker-compose up --build// rebuild
