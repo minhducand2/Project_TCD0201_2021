@@ -4,6 +4,7 @@ using ApiGen.Data.Entity;
 using ApiGen.Infrastructure.Extensions;
 using AutoMapper; 
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
