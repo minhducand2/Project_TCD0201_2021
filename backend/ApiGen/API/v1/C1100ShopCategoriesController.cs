@@ -62,7 +62,7 @@ namespace ApiGen.API.v1
             if (what == 1103)
             {
                 // Get id ShopCategories need delete
-                var listid = param.listid.Value;
+                var listid = param.listid;
 
                 // Call delete all data ShopCategories table by list id
                 var result = await _d1100ShopCategoriesDataAccess.DeleteAsync(listid);
