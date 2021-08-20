@@ -114,20 +114,8 @@ namespace ApiGen.API.v1
                 return JsonConvert.SerializeObject(result, Formatting.Indented);
             }
 
+
             if (what == 1007)
-            {
-                // Auto map request param data to Entity
-                UrlQueryParameters queryParam = _mapper.Map<UrlQueryParameters>(param);
-                queryParam.limit = unchecked((int)param.limit.Value);
-                queryParam.offset = unchecked((int)param.offset.Value);
-
-                // Call get all data from ShopComment table have pagination
-                var result = await _d1000ShopCommentDataAccess.GetPaginationShopCommentAsync(queryParam);
-
-                return JsonConvert.SerializeObject(result, Formatting.Indented);
-            }
-            //count number item comment
-            if (what == 1008)
             {
                 // Get id ShopComment need check
                 var Condition = "";
