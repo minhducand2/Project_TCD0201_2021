@@ -83,18 +83,7 @@ namespace ApiGen.API.v1
             }
 
             // Get data Footer Pagination 
-            if (what == 505)
-            {
-                // Auto map request param data to Entity
-                UrlQueryParameters queryParam = _mapper.Map<UrlQueryParameters>(param);
-                queryParam.limit = unchecked((int)param.limit.Value);
-                queryParam.offset = unchecked((int)param.offset.Value);
 
-                // Call get all data from Footer table have pagination
-                var result = await _d500FooterDataAccess.GetPaginationAsync(queryParam);
-
-                return JsonConvert.SerializeObject(result, Formatting.Indented);
-            }
 
             // Check Footer exists by Id
             if (what == 506)
