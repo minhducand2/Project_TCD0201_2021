@@ -121,7 +121,7 @@ namespace ApiGen.API.v1
             if (what == 1407)
             { 
                 // Call TOP Blog all data to User table
-                var result ();
+                var result = await _d1400BlogDataAccess.CustomJoinBlog ();
 
                 return JsonConvert.SerializeObject(result, Formatting.Indented);
             }
