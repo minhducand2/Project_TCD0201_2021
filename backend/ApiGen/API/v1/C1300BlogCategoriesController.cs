@@ -85,7 +85,9 @@ namespace ApiGen.API.v1
             if (what == 1305)
             {
                 // Auto map request param data to Entity
-
+                UrlQueryParameters queryParam = _mapper.Map<UrlQueryParameters>(param);
+                queryParam.limit = unchecked((int)param.limit.Value);
+                queryParam.offset = unchecked((int)param.offset.Value);
 
                 // Call get all data from BlogCategories table have pagination
                 var result = await _d1300BlogCategoriesDataAccess.GetPaginationAsync(queryParam);
