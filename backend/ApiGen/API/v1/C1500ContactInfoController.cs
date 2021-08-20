@@ -111,7 +111,7 @@ namespace ApiGen.API.v1
                 return JsonConvert.SerializeObject(result, Formatting.Indented);
             } 
 
-            return null;
+
         }
     }
 }
