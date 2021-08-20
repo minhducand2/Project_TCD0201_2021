@@ -89,17 +89,7 @@ namespace ApiGen.API.v1
                 return JsonConvert.SerializeObject(result, Formatting.Indented);
             }
 
-            // Find data Account by Id
-            if (what == 6)
-            {
-                // Get id Account need delete
-                string id = param.id;
 
-                // Call find Account from table by id
-                var result = await _d000AccountDataAccess.GetByIdAsync(id);
-
-                return JsonConvert.SerializeObject(result, Formatting.Indented);
-            }
 
             // Change password
             if (what == 7)
