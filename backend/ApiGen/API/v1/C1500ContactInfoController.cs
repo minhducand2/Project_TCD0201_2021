@@ -105,12 +105,9 @@ namespace ApiGen.API.v1
                 {
                     Condition = param.Condition;
                 }
-                // Call check ContactInfo in table
-                var result = await _d1500ContactInfoDataAccess.CountNumberItem(Condition);
 
-                return JsonConvert.SerializeObject(result, Formatting.Indented);
             } 
-
+            return null;
 
         }
     }
