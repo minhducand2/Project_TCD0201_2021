@@ -28,7 +28,7 @@ services:
         - "8000:80"
     depends_on:
         - db
- 
+//** 
   db:
     image: "mcr.microsoft.com/mssql/server:2019-latest" 
     environment:
@@ -38,7 +38,7 @@ services:
     #     - container-volume:/var/opt/mssql/data
     ports:
         - 1433:1433
-
+**//
   # web:
   #   build: ./backend
   #   ports:
