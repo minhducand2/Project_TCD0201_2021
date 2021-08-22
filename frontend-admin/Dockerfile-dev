@@ -1,26 +1,16 @@
-version: '3'
-services:
-  angular-ui-admin:
-    build:
-      context: ./frontend-admin
-      dockerfile: Dockerfile-dev
-    ports:
-      - "4000:4000"
-    container_name: angular-ui-admin
-    volumes:
-       - ./frontend-admin:/usr/src/app/frontend-admin
-       - /usr/src/app/frontend-admin/node_modules
+FROM node:12.18.1
 
-  # angular-ui-user:
-  #   build:
-  #     context: ./frontend-user
-  #     dockerfile: Dockerfile-dev
-  #   ports:
-  #     - "5000:5000"
-  #   container_name: angular-ui-user
-  #   volumes:
-  #      - ./frontend-user:/usr/src/app/frontend-user
-  #      - /usr/src/app/frontend-user/node_modules
+WORKDIR /usr/src/app/frontend-admin
 
-  # angular-ui-admin:
-  #   build:
+COPY package*.json ./
+
+RUN npm uninstall -g angular-cli
+RUN npm cache clear --force
+RUN npm install -g @angular/cli@latest
+RUN npm install --save-dev @angular-devkit/build-angular  
+RUN npm install
+
+
+EXPOSE 4000
+
+CMD ["npm", "start"]
