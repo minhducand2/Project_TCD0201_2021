@@ -3,8 +3,8 @@
   "version": "11.0.2",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host=0.0.0.0 --progress=true --port 4200 --disable-host-check",
-    "start1": "ng serve --host=0.0.0.0 --progress=true --port 4200",
+    "start": "ng serve --host=0.0.0.0 --progress=true --port 4000 --disable-host-check",
+    "start1": "ng serve --host=0.0.0.0 --progress=true --port 4000",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
